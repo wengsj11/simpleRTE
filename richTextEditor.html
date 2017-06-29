@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+        <script type="text/javascript" src="script.js"></script>
+        </head>
+    <body>
+        <div class="container">
+            <div class="jumbotron">
+                <h1>Rich Text Editor v1.0</h1>
+                <p>富文本编辑器v1.0</p>
+                <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="btn-toolbar" role="toolbar" aria-label="...">
+                        <div class="btn-group" role="group" aria-label="...">
+                            <button type="button" class="btn btn-default" id="bold-btn"><span class="glyphicon glyphicon-bold" aria-hidden="true"></span></button>
+                            <button type="button" class="btn btn-default" id="italic-btn"><span class="glyphicon glyphicon-italic" aria-hidden="true"></span></button>
+                            <button type="button" class="btn btn-default" id="underline-btn"><u>U</u></button>
+                            <button type="button" class="btn btn-default" id="sup-btn"><span class="glyphicon glyphicon-superscript" aria-hidden="true"></span></button>
+                            <button type="button" class="btn btn-default" id="sub-btn"><span class="glyphicon glyphicon-subscript" aria-hidden="true"></span></button>
+                            <button type="button" class="btn btn-default" id="strike-btn"><s>abc</s></span></button>
+                            <button type="button" class="btn btn-default" id="order-btn">(i)</button>
+                            <button type="button" class="btn btn-default" id="unorder-btn">·</button>
+                        </div>
+                        <div class="btn-group" >
+                            <select class="form-control" id="changefont">
+                                <option value="Times New Roman">Times New Roman</option>
+                                <option value="consolas">Consolas</option>
+                                <option value="tahoma">Tahoma</option>
+                                <option value="monospace">Monospace</option>
+                                <option value="cursive">Cursive</option>
+                                <option value="sans-serif">Sans-Serif</option>
+                                <option value="Calibri">Calibri</option>
+                            </select>
+                        </div>
+                        <div class="btn-group" >
+                            <select class="form-control" id="fontSize">
+                                <script type="text/javascript">
+                                    for (var i = 1; i <= 12; i++) {
+                                        $("#fontSize").append("<option value='"+i+"'>"+i+"</option>");
+                                    }
+                                </script>
+                            </select>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="...">
+                            <button type="button" class="btn btn-default" id="forecolor-btn"><span class="glyphicon glyphicon-text-color" aria-hidden="true"></span></button>
+                            <button type="button" class="btn btn-default" id="backcolor-btn"><span class="glyphicon glyphicon-text-background" aria-hidden="true"></span></button>
+                            <input type="color" name="forecolor" id="color" style="margin-top: 5px; border: none; outline:none; background: transparent;"/>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="...">
+                            <button type="button" class="btn btn-default">Link</button>
+                            <button type="button" class="btn btn-default">Unlink</button>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="...">
+                            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span></button>
+                            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="panel-body" style="height: 300px;">
+                    <div id="WYSIWYG" class="WYSIWYG"style="outline:none; width: 100%; height: 100%; overflow:auto;" contenteditable></div>
+                </div>
+                <div class="panel-footer text-right">字数： <span class="badge" id="count">42</span></div>
+            </div>
+        </div>
+    </body>
+    
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+    //显示字体下拉框的fontfamily
+        $("#changefont").children().each(function(){
+            var font = $(this); //option
+            font.css('fontFamily',font.val());
+        });
+    </script>
+</html>
